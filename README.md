@@ -29,7 +29,3 @@ Types of interest
 
 Notifications (Local)
 https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html
-
-- 
-
-
