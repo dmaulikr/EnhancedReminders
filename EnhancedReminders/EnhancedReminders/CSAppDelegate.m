@@ -7,13 +7,20 @@
 //
 
 #import "CSAppDelegate.h"
+#import "THDNavigationController.h"
+#import "THDReminderListController.h"
 
 @implementation CSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    //Set up Navigation Controller
+    THDReminderListController *thdReminderListController = [[THDReminderListController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:thdReminderListController];
+    [[self window] setRootViewController:navController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
