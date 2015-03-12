@@ -7,9 +7,12 @@ https://developer.apple.com/library/ios/documentation/MapKit/Reference/MapKit_Fr
 classes of interest
 - MKETAResponse
 - MKLocalSearch
-- MKLocalSearchRequest
-- MKLocalSearchResponse
-- MKReverseGeocoder
+  - An MKLocalSearch object initiates a map-based search operation and delivers the results back to your app asynchronously. Search objects are designed to perform one search operation only. To perform several different searches, you must create separate instances of this class and start them separately.
+  - (instancetype)initWithRequest:(MKLocalSearchRequest *)request; initializes the object
+    - MKLocalSearchRequest; Provides natural search querey for locations. Also look into the region propery. It gives a hint to make search faster
+  -  (void)startWithCompletionHandler:(MKLocalSearchCompletionHandler)completionHandler; starts a search with the MKLocalSearchCompletionHandler.
+    - MKLocalSearchCompletionHandler; Block that takes (MKLocalSearchResponse *response, NSError *error). response is the result of the search (an Array of MKMapItems), and error is any error that happens.
+- MKReverseGeocoder (Don't think we need it)
 - MKUserLocation
 - MKReverseGeocoderDelegate
 
@@ -26,6 +29,6 @@ https://developer.apple.com/library/ios/documentation/MapKit/Reference/MapKitDat
 
 Types of interest 
 - MKMapPoint
+- MKMapItem
 
-Notifications (Local)
-https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html
+
