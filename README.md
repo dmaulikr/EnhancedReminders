@@ -26,6 +26,10 @@ https://developer.apple.com/library/ios/documentation/MapKit/Reference/MapKitDat
 
 Types of interest 
 - MKMapPoint
+
+Notifications (Local)
+https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html
+
 - 
 
 
