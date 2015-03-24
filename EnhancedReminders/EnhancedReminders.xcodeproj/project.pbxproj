@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A8BE8AE1AC1F10600616CAD /* THDReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BE8AD1AC1F10600616CAD /* THDReminder.m */; };
 		6A915D9E1AB2305600A1BEEC /* THDOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915D9D1AB2305600A1BEEC /* THDOptionsController.m */; };
 		6A915DA11AB2306900A1BEEC /* THDReminderDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DA01AB2306900A1BEEC /* THDReminderDetailsController.m */; };
 		6A915DA41AB2307600A1BEEC /* THDReminderEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A8BE8AC1AC1F10600616CAD /* THDReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDReminder.h; sourceTree = "<group>"; };
+		6A8BE8AD1AC1F10600616CAD /* THDReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDReminder.m; sourceTree = "<group>"; };
 		6A915D9C1AB2305600A1BEEC /* THDOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDOptionsController.h; sourceTree = "<group>"; };
 		6A915D9D1AB2305600A1BEEC /* THDOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDOptionsController.m; sourceTree = "<group>"; };
 		6A915D9F1AB2306900A1BEEC /* THDReminderDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDReminderDetailsController.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 			children = (
 				6AE3E2021AAF6429007C9CD2 /* CSAppDelegate.h */,
 				6AE3E2031AAF6429007C9CD2 /* CSAppDelegate.m */,
+				6A8BE8AC1AC1F10600616CAD /* THDReminder.h */,
+				6A8BE8AD1AC1F10600616CAD /* THDReminder.m */,
 				6AE3E2051AAF6429007C9CD2 /* Images.xcassets */,
 				6AE3E1FA1AAF6429007C9CD2 /* Supporting Files */,
 				6A915D9C1AB2305600A1BEEC /* THDOptionsController.h */,
@@ -271,6 +276,7 @@
 				6A915DA11AB2306900A1BEEC /* THDReminderDetailsController.m in Sources */,
 				6A915D9E1AB2305600A1BEEC /* THDOptionsController.m in Sources */,
 				6AE3E2001AAF6429007C9CD2 /* main.m in Sources */,
+				6A8BE8AE1AC1F10600616CAD /* THDReminder.m in Sources */,
 				6A915DA41AB2307600A1BEEC /* THDReminderEditController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
