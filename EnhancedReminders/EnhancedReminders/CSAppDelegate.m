@@ -20,6 +20,13 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:thdReminderListController];
     [[self window] setRootViewController:navController];
     
+    //Load or create array of reminders
+    NSMutableArray *reminders = nil;
+    //if (archive exists on system)
+    //    load from system
+    //else
+    reminders = [[NSMutableArray alloc] init];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

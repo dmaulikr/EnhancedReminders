@@ -10,6 +10,7 @@
 #import "THDReminderDetailsController.h"
 #import "THDOptionsController.h"
 #import "THDReminderEditController.h"
+#import "THDReminder.h"
 
 @interface THDReminderListController ()
 
@@ -21,7 +22,17 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        _reminders = [[NSMutableArray alloc] init];
+        //[self setEditing:YES animated:YES];
+    }
+    return self;
+}
+
+-(id)initWithReminders:(NSMutableArray *)reminders
+{
+    self = [super init];
+    if (self) {
+        _reminders = reminders;
         //[self setEditing:YES animated:YES];
     }
     return self;
@@ -38,6 +49,7 @@
     
     UIBarButtonItem *addNewReminderButton = [[UIBarButtonItem alloc]initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(createNewButtonPressed)];
     [[self navigationItem]setLeftBarButtonItem:addNewReminderButton];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -73,7 +85,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 21;
+    return [_reminders count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,12 +94,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myCellID];
     
     if(cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myCellID];
-    }
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:myCellID];
     
     // Configure the cell...
-    [[cell textLabel] setText:[NSString stringWithFormat:@"Row %ld", (long)[indexPath row]]];
+    THDReminder *reminder = [_reminders objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:[NSString stringWithFormat:@"Row %ld", (long)[indexPath row]]];;
+    //[[cell imageView] setImage:[UIImage imageNamed:@"puppy.jpg"]];
+    [[cell detailTextLabel] setText:@"blah"];
     [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
     
     return cell;
