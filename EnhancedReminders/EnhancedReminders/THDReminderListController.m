@@ -9,6 +9,7 @@
 #import "THDReminderListController.h"
 #import "THDReminderDetailsController.h"
 #import "THDOptionsController.h"
+#import "THDReminderEditController.h"
 
 @interface THDReminderListController ()
 
@@ -35,11 +36,18 @@
     UIBarButtonItem *optionsButton = [[UIBarButtonItem alloc] initWithTitle:@"Options" style:UIBarButtonItemStylePlain target:self action:@selector(optionsButtonPressed)];
     [[self navigationItem] setRightBarButtonItem:optionsButton];
     
+    UIBarButtonItem *addNewReminderButton = [[UIBarButtonItem alloc]initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(createNewButtonPressed)];
+    [[self navigationItem]setLeftBarButtonItem:addNewReminderButton];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)createNewButtonPressed{
+    UIViewController *controller = [[THDReminderEditController alloc]init];
+    [[self navigationController] pushViewController:controller animated:YES];
 }
 
 -(void)optionsButtonPressed
