@@ -122,7 +122,6 @@
 				6AE3E2021AAF6429007C9CD2 /* CSAppDelegate.h */,
 				6AE3E2031AAF6429007C9CD2 /* CSAppDelegate.m */,
 				6AE3E2051AAF6429007C9CD2 /* Images.xcassets */,
-				6AE3E1FA1AAF6429007C9CD2 /* Supporting Files */,
 				6A915D9C1AB2305600A1BEEC /* THDOptionsController.h */,
 				6A915D9D1AB2305600A1BEEC /* THDOptionsController.m */,
 				6A915D9F1AB2306900A1BEEC /* THDReminderDetailsController.h */,
@@ -131,6 +130,7 @@
 				6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */,
 				6A915DAE1AB2340B00A1BEEC /* THDReminderListController.h */,
 				6A915DAF1AB2340B00A1BEEC /* THDReminderListController.m */,
+				6AE3E1FA1AAF6429007C9CD2 /* Supporting Files */,
 			);
 			path = EnhancedReminders;
 			sourceTree = "<group>";
