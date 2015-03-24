@@ -98,10 +98,10 @@
     
     // Configure the cell...
     THDReminder *reminder = [_reminders objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[reminder title]];;
-    //[[cell imageView] setImage:[UIImage imageNamed:@"puppy.jpg"]];
+    [[cell textLabel] setText:[reminder title]];
     [[cell detailTextLabel] setText:[reminder description]];
     [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
+    //[[cell imageView] setImage:[UIImage imageNamed:@"puppy.jpg"]];
     
     return cell;
 }
