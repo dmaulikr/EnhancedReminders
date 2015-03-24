@@ -7,7 +7,6 @@
 //
 
 #import "CSAppDelegate.h"
-#import "THDNavigationController.h"
 #import "THDReminderListController.h"
 
 @implementation CSAppDelegate

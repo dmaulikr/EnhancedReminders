@@ -10,7 +10,6 @@
 		6A915D9E1AB2305600A1BEEC /* THDOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915D9D1AB2305600A1BEEC /* THDOptionsController.m */; };
 		6A915DA11AB2306900A1BEEC /* THDReminderDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DA01AB2306900A1BEEC /* THDReminderDetailsController.m */; };
 		6A915DA41AB2307600A1BEEC /* THDReminderEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */; };
-		6A915DAA1AB230D700A1BEEC /* THDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DA91AB230D700A1BEEC /* THDNavigationController.m */; };
 		6A915DB01AB2340B00A1BEEC /* THDReminderListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DAF1AB2340B00A1BEEC /* THDReminderListController.m */; };
 		6AE3E1F41AAF6429007C9CD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE3E1F31AAF6429007C9CD2 /* Foundation.framework */; };
 		6AE3E1F61AAF6429007C9CD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE3E1F51AAF6429007C9CD2 /* CoreGraphics.framework */; };
@@ -43,8 +42,6 @@
 		6A915DA01AB2306900A1BEEC /* THDReminderDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDReminderDetailsController.m; sourceTree = "<group>"; };
 		6A915DA21AB2307600A1BEEC /* THDReminderEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDReminderEditController.h; sourceTree = "<group>"; };
 		6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDReminderEditController.m; sourceTree = "<group>"; };
-		6A915DA81AB230D700A1BEEC /* THDNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDNavigationController.h; sourceTree = "<group>"; };
-		6A915DA91AB230D700A1BEEC /* THDNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDNavigationController.m; sourceTree = "<group>"; };
 		6A915DAE1AB2340B00A1BEEC /* THDReminderListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDReminderListController.h; sourceTree = "<group>"; };
 		6A915DAF1AB2340B00A1BEEC /* THDReminderListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDReminderListController.m; sourceTree = "<group>"; };
 		6AE3E1F01AAF6429007C9CD2 /* EnhancedReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnhancedReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,17 +122,15 @@
 				6AE3E2021AAF6429007C9CD2 /* CSAppDelegate.h */,
 				6AE3E2031AAF6429007C9CD2 /* CSAppDelegate.m */,
 				6AE3E2051AAF6429007C9CD2 /* Images.xcassets */,
-				6AE3E1FA1AAF6429007C9CD2 /* Supporting Files */,
 				6A915D9C1AB2305600A1BEEC /* THDOptionsController.h */,
 				6A915D9D1AB2305600A1BEEC /* THDOptionsController.m */,
 				6A915D9F1AB2306900A1BEEC /* THDReminderDetailsController.h */,
 				6A915DA01AB2306900A1BEEC /* THDReminderDetailsController.m */,
 				6A915DA21AB2307600A1BEEC /* THDReminderEditController.h */,
 				6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */,
-				6A915DA81AB230D700A1BEEC /* THDNavigationController.h */,
-				6A915DA91AB230D700A1BEEC /* THDNavigationController.m */,
 				6A915DAE1AB2340B00A1BEEC /* THDReminderListController.h */,
 				6A915DAF1AB2340B00A1BEEC /* THDReminderListController.m */,
+				6AE3E1FA1AAF6429007C9CD2 /* Supporting Files */,
 			);
 			path = EnhancedReminders;
 			sourceTree = "<group>";
@@ -265,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A915DAA1AB230D700A1BEEC /* THDNavigationController.m in Sources */,
 				6A915DB01AB2340B00A1BEEC /* THDReminderListController.m in Sources */,
 				6AE3E2041AAF6429007C9CD2 /* CSAppDelegate.m in Sources */,
 				6A915DA11AB2306900A1BEEC /* THDReminderDetailsController.m in Sources */,
