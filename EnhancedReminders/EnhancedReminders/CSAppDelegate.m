@@ -8,6 +8,7 @@
 
 #import "CSAppDelegate.h"
 #import "THDReminderListController.h"
+#import "THDReminder.h" //DELETE ME WHEN DONE TESTING
 
 @implementation CSAppDelegate
 
@@ -15,17 +16,23 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //Set up Navigation Controller
-    THDReminderListController *thdReminderListController = [[THDReminderListController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:thdReminderListController];
-    [[self window] setRootViewController:navController];
-    
     //Load or create array of reminders
     NSMutableArray *reminders = nil;
     //if (archive exists on system)
     //    load from system
     //else
-    reminders = [[NSMutableArray alloc] init];
+    //reminders = [[NSMutableArray alloc] init];
+    
+    //DELETE ME WHEN DONE TESTING
+    THDReminder* test1 = [[THDReminder alloc] initWithTitle:@"Reminder 1" description:@"Description 1" beginDate:[[NSDate alloc] initWithTimeIntervalSinceNow:2160000] endDate:nil];
+    THDReminder* test2 = [[THDReminder alloc] initWithTitle:@"Reminder 2" description:@"Description 2" beginDate:nil endDate:[[NSDate alloc] initWithTimeIntervalSinceNow:2160000]];
+    THDReminder* test3 = [[THDReminder alloc] initWithTitle:@"Reminder 3" description:@"Description 3" beginDate:[[NSDate alloc] initWithTimeIntervalSinceNow:2160000] endDate:[[NSDate alloc] initWithTimeIntervalSinceNow:2160060]];
+    reminders = [[NSMutableArray alloc] initWithObjects:test1, test2, test3, nil];
+    
+    //Set up Navigation Controller
+    THDReminderListController *thdReminderListController = [[THDReminderListController alloc] initWithReminders:reminders];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:thdReminderListController];
+    [[self window] setRootViewController:navController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

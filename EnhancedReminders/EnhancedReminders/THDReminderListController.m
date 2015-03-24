@@ -98,9 +98,9 @@
     
     // Configure the cell...
     THDReminder *reminder = [_reminders objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[NSString stringWithFormat:@"Row %ld", (long)[indexPath row]]];;
+    [[cell textLabel] setText:[reminder title]];;
     //[[cell imageView] setImage:[UIImage imageNamed:@"puppy.jpg"]];
-    [[cell detailTextLabel] setText:@"blah"];
+    [[cell detailTextLabel] setText:[reminder description]];
     [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
     
     return cell;

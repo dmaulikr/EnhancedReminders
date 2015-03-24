@@ -10,8 +10,8 @@
 
 @interface THDReminderListController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property NSMutableArray *reminders;
+@property NSMutableArray* reminders;
 
--(id) initWithReminders:(NSMutableArray *)reminders;
+-(id)initWithReminders:(NSMutableArray*)reminders;
 
 @end
