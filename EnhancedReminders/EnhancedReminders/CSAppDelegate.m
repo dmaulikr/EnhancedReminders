@@ -16,21 +16,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //Load or create array of reminders
-    NSMutableArray *reminders = nil;
-    //if (archive exists on system)
-    //    load from system
-    //else
-    //reminders = [[NSMutableArray alloc] init];
-    
-    //DELETE ME WHEN DONE TESTING
-    THDReminder* test1 = [[THDReminder alloc] initWithTitle:@"Reminder 1" description:@"Description 1" beginDate:[[NSDate alloc] initWithTimeIntervalSinceNow:120] endDate:nil];
-    THDReminder* test2 = [[THDReminder alloc] initWithTitle:@"Reminder 2" description:@"Description 2" beginDate:nil endDate:[[NSDate alloc] initWithTimeIntervalSinceNow:180]];
-    THDReminder* test3 = [[THDReminder alloc] initWithTitle:@"Reminder 3" description:@"Description 3" beginDate:[[NSDate alloc] initWithTimeIntervalSinceNow:90] endDate:[[NSDate alloc] initWithTimeIntervalSinceNow:150]];
-    reminders = [[NSMutableArray alloc] initWithObjects:test1, test2, test3, nil];
-    
     //Set up Navigation Controller
-    THDReminderListController *thdReminderListController = [[THDReminderListController alloc] initWithReminders:reminders];
+    THDReminderListController *thdReminderListController = [[THDReminderListController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:thdReminderListController];
     [[self window] setRootViewController:navController];
     

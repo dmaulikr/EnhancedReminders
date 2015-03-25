@@ -14,25 +14,22 @@
 
 @interface THDReminderListController ()
 
+-(NSString *)getArchivePathFor:(NSString *)data;
+-(void)loadRemindersAndOptions;
+
 @end
 
 @implementation THDReminderListController
+
+-(id)init
+{
+    return [self initWithStyle:UITableViewStylePlain];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        _reminders = [[NSMutableArray alloc] init];
-        //[self setEditing:YES animated:YES];
-    }
-    return self;
-}
-
--(id)initWithReminders:(NSMutableArray *)reminders
-{
-    self = [super init];
-    if (self) {
-        _reminders = reminders;
         //[self setEditing:YES animated:YES];
     }
     return self;
@@ -42,6 +39,7 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Reminders"];
+    [self loadRemindersAndOptions];
     
     //create options button on the right of the navigation bar
     UIBarButtonItem *optionsButton = [[UIBarButtonItem alloc] initWithTitle:@"Options" style:UIBarButtonItemStylePlain target:self action:@selector(optionsButtonPressed)];
@@ -50,6 +48,10 @@
     UIBarButtonItem *addNewReminderButton = [[UIBarButtonItem alloc]initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(createNewButtonPressed)];
     [[self navigationItem]setLeftBarButtonItem:addNewReminderButton];
     
+    //register as an observer
+    UIApplication *app = [UIApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:app];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -57,7 +59,8 @@
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)createNewButtonPressed{
+-(void)createNewButtonPressed
+{
     UIViewController *controller = [[THDReminderEditController alloc]init];
     [[self navigationController] pushViewController:controller animated:YES];
 }
@@ -96,11 +99,12 @@
     if(cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:myCellID];
     
-    // Configure the cell...
+    //configure cell
     THDReminder *reminder = [_reminders objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[reminder title]];
     [[cell detailTextLabel] setText:[reminder description]];
     [cell setAccessoryType:UITableViewCellAccessoryDetailButton];
+    #warning Hook up images
     //[[cell imageView] setImage:[UIImage imageNamed:@"puppy.jpg"]];
     
     return cell;
@@ -108,16 +112,53 @@
 
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Details");
-    
-    //Redirect to the THDReminderDetailsController.  Initialize using the ID for the selected row.
-    UIViewController *next = nil;
-    next = [[THDReminderDetailsController alloc] init];
+    //redirect to the THDReminderDetailsController initializing using the ID for the selected row
+    #warning Pass reminder over to details viewer
+    UIViewController *next = [[THDReminderDetailsController alloc] init];
     
     if(next != nil)
-    {
         [[self navigationController] pushViewController:next animated:YES];
+}
+
+-(NSString *)getArchivePathFor:(NSString *)data
+{
+    NSString* file = [[NSString alloc] initWithFormat:@"%@.data", data];
+    return [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:file];
+}
+
+-(void)loadRemindersAndOptions
+{
+    //load or create array of reminders
+    NSString* path = [self getArchivePathFor:@"reminders"];
+    NSMutableArray* reminders = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    if(!reminders) {
+        #warning Delete me when done testing
+        THDReminder* test1 = [[THDReminder alloc] initWithTitle:@"Reminder 1" description:@"Description 1" beginDate:[[NSDate alloc] initWithTimeIntervalSinceNow:120] endDate:nil];
+        THDReminder* test2 = [[THDReminder alloc] initWithTitle:@"Reminder 2" description:@"Description 2" beginDate:nil endDate:[[NSDate alloc] initWithTimeIntervalSinceNow:180]];
+        THDReminder* test3 = [[THDReminder alloc] initWithTitle:@"Reminder 3" description:@"Description 3" beginDate:[[NSDate alloc] initWithTimeIntervalSinceNow:90] endDate:[[NSDate alloc] initWithTimeIntervalSinceNow:150]];
+        THDReminder* test4 = [[THDReminder alloc] init];
+        reminders = [[NSMutableArray alloc] initWithObjects:test1, test2, test3, test4, nil];
     }
+    _reminders = reminders;
+    
+    //load or create options
+    path = [self getArchivePathFor:@"options"];
+    THDOptions* options = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    if(!reminders) {
+        options = [[THDOptions alloc] init];
+    }
+    _options = options;
+}
+
+-(void) applicationDidEnterBackground:(UIApplication*)app
+{
+    //archive reminders
+    NSString* path = [self getArchivePathFor:@"reminders"];
+    [NSKeyedArchiver archiveRootObject:_reminders toFile:path];
+    
+    //archive options
+    path = [self getArchivePathFor:@"options"];
+    [NSKeyedArchiver archiveRootObject:_options toFile:path];
 }
 
 /*

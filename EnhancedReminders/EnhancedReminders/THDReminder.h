@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface THDReminder : NSObject
+@interface THDReminder : NSObject <NSCoding>
 
 @property NSString *title;
 @property NSString *description;

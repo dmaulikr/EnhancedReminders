@@ -12,6 +12,7 @@
 		6A915DA11AB2306900A1BEEC /* THDReminderDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DA01AB2306900A1BEEC /* THDReminderDetailsController.m */; };
 		6A915DA41AB2307600A1BEEC /* THDReminderEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */; };
 		6A915DB01AB2340B00A1BEEC /* THDReminderListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A915DAF1AB2340B00A1BEEC /* THDReminderListController.m */; };
+		6AAD2C781AC31D8100CE5017 /* THDOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AAD2C771AC31D8100CE5017 /* THDOptions.m */; };
 		6AE3E1F41AAF6429007C9CD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE3E1F31AAF6429007C9CD2 /* Foundation.framework */; };
 		6AE3E1F61AAF6429007C9CD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE3E1F51AAF6429007C9CD2 /* CoreGraphics.framework */; };
 		6AE3E1F81AAF6429007C9CD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE3E1F71AAF6429007C9CD2 /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 		6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDReminderEditController.m; sourceTree = "<group>"; };
 		6A915DAE1AB2340B00A1BEEC /* THDReminderListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDReminderListController.h; sourceTree = "<group>"; };
 		6A915DAF1AB2340B00A1BEEC /* THDReminderListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDReminderListController.m; sourceTree = "<group>"; };
+		6AAD2C761AC31D8100CE5017 /* THDOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THDOptions.h; sourceTree = "<group>"; };
+		6AAD2C771AC31D8100CE5017 /* THDOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THDOptions.m; sourceTree = "<group>"; };
 		6AE3E1F01AAF6429007C9CD2 /* EnhancedReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnhancedReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE3E1F31AAF6429007C9CD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6AE3E1F51AAF6429007C9CD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,9 +127,10 @@
 			children = (
 				6AE3E2021AAF6429007C9CD2 /* CSAppDelegate.h */,
 				6AE3E2031AAF6429007C9CD2 /* CSAppDelegate.m */,
+				6AAD2C761AC31D8100CE5017 /* THDOptions.h */,
+				6AAD2C771AC31D8100CE5017 /* THDOptions.m */,
 				6A8BE8AC1AC1F10600616CAD /* THDReminder.h */,
 				6A8BE8AD1AC1F10600616CAD /* THDReminder.m */,
-				6AE3E2051AAF6429007C9CD2 /* Images.xcassets */,
 				6A915D9C1AB2305600A1BEEC /* THDOptionsController.h */,
 				6A915D9D1AB2305600A1BEEC /* THDOptionsController.m */,
 				6A915D9F1AB2306900A1BEEC /* THDReminderDetailsController.h */,
@@ -135,6 +139,7 @@
 				6A915DA31AB2307600A1BEEC /* THDReminderEditController.m */,
 				6A915DAE1AB2340B00A1BEEC /* THDReminderListController.h */,
 				6A915DAF1AB2340B00A1BEEC /* THDReminderListController.m */,
+				6AE3E2051AAF6429007C9CD2 /* Images.xcassets */,
 				6AE3E1FA1AAF6429007C9CD2 /* Supporting Files */,
 			);
 			path = EnhancedReminders;
@@ -268,6 +273,7 @@
 				6A915DB01AB2340B00A1BEEC /* THDReminderListController.m in Sources */,
 				6AE3E2041AAF6429007C9CD2 /* CSAppDelegate.m in Sources */,
 				6A915DA11AB2306900A1BEEC /* THDReminderDetailsController.m in Sources */,
+				6AAD2C781AC31D8100CE5017 /* THDOptions.m in Sources */,
 				6A915D9E1AB2305600A1BEEC /* THDOptionsController.m in Sources */,
 				6AE3E2001AAF6429007C9CD2 /* main.m in Sources */,
 				6A8BE8AE1AC1F10600616CAD /* THDReminder.m in Sources */,

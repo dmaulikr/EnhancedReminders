@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "THDOptions.h"
 
 @interface THDReminderListController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property NSMutableArray* reminders;
-
--(id)initWithReminders:(NSMutableArray*)reminders;
+@property THDOptions* options;
 
 @end
