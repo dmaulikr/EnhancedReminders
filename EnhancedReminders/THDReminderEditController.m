@@ -7,8 +7,11 @@
 //
 
 #import "THDReminderEditController.h"
+#import "THDReminder.h"
 
 @interface THDReminderEditController ()
+@property NSDate *triggerBeforeTime;
+@property NSDate *triggerAfterTime;
 -(void)updateBeforeText:(id)sender;
 -(void)dismissKeyboard;
 -(void)updateAfterText:(id)sender;
@@ -40,11 +43,13 @@
 -(void)updateBeforeText:(id)sender{
     UIDatePicker *picker = (UIDatePicker*)self.triggerBeforeText.inputView;
     self.triggerBeforeText.text = [NSString stringWithFormat:@"%@",picker.date];
+    _triggerBeforeTime = picker.date;
 }
 
 -(void)updateAfterText:(id)sender{
     UIDatePicker *picker = (UIDatePicker*)self.triggerAfterText.inputView;
     self.triggerAfterText.text = [NSString stringWithFormat:@"%@",picker.date];
+    _triggerAfterTime = picker.date;
 }
 
 - (void)viewDidLoad
@@ -77,11 +82,11 @@
 
 //Display datepicker instead of keyboard
 - (IBAction)byTimeDidBeginEdit:(id)sender {
-    
     UIDatePicker *datePicker = [[UIDatePicker alloc]init];
     [datePicker setDate:[NSDate date]];
     [datePicker addTarget:self action:@selector(updateBeforeText:) forControlEvents:UIControlEventValueChanged];
     [self.triggerBeforeText setInputView:datePicker];
+    [self updateBeforeText:sender];
 }
 
 - (IBAction)afterTimeDidBeginEdit:(id)sender {
@@ -89,5 +94,10 @@
     [datePicker setDate:[NSDate date]];
     [datePicker addTarget:self action:@selector(updateAfterText:) forControlEvents:UIControlEventValueChanged];
     [self.triggerAfterText setInputView:datePicker];
+    [self updateAfterText:sender];
+}
+
+- (IBAction)saveAction:(id)sender {
+    THDReminder *reminder = [[THDReminder alloc]initWithTitle:[_titleText text] description:[_desctiptionText text] beginDate:_triggerAfterTime endDate:_triggerBeforeTime];
 }
 @end
