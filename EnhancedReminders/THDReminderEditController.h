@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *triggerBeforeText;
 - (IBAction)byTimeDidBeginEdit:(id)sender;
 - (IBAction)afterTimeDidBeginEdit:(id)sender;
-- (IBAction)saveAction:(id)sender;
+- (IBAction)deleteAction:(id)sender;
+
 
 @end

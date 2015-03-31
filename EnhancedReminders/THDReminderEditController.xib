@@ -94,10 +94,11 @@
                         <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxA-Fd-K2e">
                             <rect key="frame" x="264" y="322" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Save">
+                            <state key="normal" title="Delete">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
+                                <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="REL-eC-klR"/>
                                 <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="mSQ-Et-5Hc"/>
                             </connections>
                         </button>

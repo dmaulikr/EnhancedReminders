@@ -15,6 +15,7 @@
 -(void)updateBeforeText:(id)sender;
 -(void)dismissKeyboard;
 -(void)updateAfterText:(id)sender;
+-(void)saveButtonPressed;
 @end
 
 @implementation THDReminderEditController
@@ -55,6 +56,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setTitle:@"Edit"];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonPressed)];
+    [[self navigationItem] setRightBarButtonItem:saveButton];
+
     // Do any additional setup after loading the view from its nib.
 }
 //- (IBAction)triggerAfter:(id)sender {
@@ -67,6 +72,12 @@
 //}
 //- (IBAction)triggerBy:(id)sender {
 //}
+
+//save button pressed. Save reminder
+-(void)saveButtonPressed
+{
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -90,6 +101,7 @@
 }
 
 - (IBAction)afterTimeDidBeginEdit:(id)sender {
+    
     UIDatePicker *datePicker = [[UIDatePicker alloc]init];
     [datePicker setDate:[NSDate date]];
     [datePicker addTarget:self action:@selector(updateAfterText:) forControlEvents:UIControlEventValueChanged];
@@ -97,7 +109,7 @@
     [self updateAfterText:sender];
 }
 
-- (IBAction)saveAction:(id)sender {
-    THDReminder *reminder = [[THDReminder alloc]initWithTitle:[_titleText text] description:[_desctiptionText text] beginDate:_triggerAfterTime endDate:_triggerBeforeTime];
+- (IBAction)deleteAction:(id)sender {
 }
+
 @end
